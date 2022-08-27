@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +69,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+=======
+# IntroductionReactjs
+ App desarrollada en React.js y CSS, es una pequeña introducción al desarrollo en React.js. contiene una vista principal donde lista una data, en la cual se pueden agregar datos, eliminar datos y marcar como leidos, tambien cuenta con un buscador el cual filtra las busquedas.
+>>>>>>> 643f5daa567a5b58276aa336930fd3450c0c58ec
