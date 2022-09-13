@@ -1,10 +1,13 @@
 import React from 'react'
+import { TodoContext } from '../TodoContext'
 import './index.css'
 
-function TodoCounter ({ total, completed }) {
-  // Podemos esto cambiar esto por una desestructuracion en los parametros.
-  // const {total, completed } = props
-  return <h2 className='TodoCounter'>Has completado {completed} de {total} TODOs</h2>
+function TodoCounter () {
+  const { totalTodos, completedTodos } = React.useContext(TodoContext)
+
+  return (
+    <h2 className='TodoCounter'>Has completado {completedTodos} de {totalTodos} TODOs</h2>
+  )
 }
 
 export { TodoCounter }
