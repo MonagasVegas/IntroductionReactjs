@@ -1,3 +1,4 @@
+/* Recibe todo lo que viene del useLocalStorage */
 import React from 'react'
 import { useLocalStorage } from './useLocalStorage'
 
@@ -5,6 +6,7 @@ function useTodos () {
   const {
     item: todos,
     saveItem: saveTodos,
+    sincronizeItem: sincronizeTodos,
     loading,
     error
   } = useLocalStorage('TODOS_V1', [])
@@ -61,7 +63,8 @@ function useTodos () {
     completeTodo,
     deleteTodo,
     openModal,
-    setOpenModal
+    setOpenModal,
+    sincronizeTodos
   }
 }
 

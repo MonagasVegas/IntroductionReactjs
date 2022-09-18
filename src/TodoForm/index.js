@@ -17,12 +17,12 @@ function TodoForm ({ addTodo, setOpenModal }) {
   }
 
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} className='container'>
       <label>Escribe tu nuevo TODO</label>
       <textarea
         value={newTodoValue}
         onChange={onChange}
-        placeholder='Cortar la cebolla oara el almuerzo'
+        placeholder='Agregar'
       />
       <div className='TodoForm-buttonContainer'>
         <button
