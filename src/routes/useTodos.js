@@ -1,6 +1,7 @@
 /* Recibe todo lo que viene del useLocalStorage */
 import React from 'react'
 import { useLocalStorage } from './useLocalStorage'
+import { newId } from '../helpers/idGenerator'
 
 function useTodos () {
   const {
@@ -9,7 +10,7 @@ function useTodos () {
     sincronizeItem: sincronizeTodos,
     loading,
     error
-  } = useLocalStorage('TODOS_V1', [])
+  } = useLocalStorage('TODOS_V2', [])
   const [searchValue, setSearchValue] = React.useState('')
   const [openModal, setOpenModal] = React.useState(false)
 
@@ -29,43 +30,65 @@ function useTodos () {
   }
 
   const addTodo = (text) => {
+    const idList = todos.map(todo => todo.id)
+    const id = newId(idList)
     const newTodos = [...todos]
     newTodos.push({
       completed: false,
-      text
+      text,
+      id
     })
     saveTodos(newTodos)
   }
 
-  const completeTodo = (text) => {
-    const todoIndex = todos.findIndex(todo => todo.text === text)
+  const getTodo = (id) => {
+    const todoIndex = todos.findIndex(todo => todo.id === id)
+    console.log([todos[todoIndex]])
+    return todos[todoIndex]
+  }
+
+  const completeTodo = (id) => {
+    const todoIndex = todos.findIndex(todo => todo.id === id)
     const newTodos = [...todos]
     newTodos[todoIndex].completed = true
     saveTodos(newTodos)
   }
+  const editTodo = (id, newText) => {
+    const todoIndex = todos.findIndex(todo => todo.id === id)
+    const newTodos = [...todos]
+    newTodos[todoIndex].text = newText
+    saveTodos(newTodos)
+  }
 
-  const deleteTodo = (text) => {
-    const todoIndex = todos.findIndex(todo => todo.text === text)
+  const deleteTodo = (id) => {
+    const todoIndex = todos.findIndex(todo => todo.id === id)
     const newTodos = [...todos]
     newTodos.splice(todoIndex, 1)
     saveTodos(newTodos)
   }
 
-  return {
+  const state = {
     loading,
     error,
     totalTodos,
     completedTodos,
     searchValue,
-    setSearchValue,
     searchedTodos,
+    getTodo
+    // openModal
+  }
+
+  const stateUpdaters = {
+    setSearchValue,
     addTodo,
     completeTodo,
+    editTodo,
     deleteTodo,
-    openModal,
-    setOpenModal,
     sincronizeTodos
+    // setOpenModal,
   }
+
+  return { state, stateUpdaters }
 }
 
 export { useTodos }

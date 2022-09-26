@@ -19,9 +19,7 @@ NO TENEMOS SEARCHtODOS ENTONCES LO QUE QUIERO ES MOSTRAR TODO LO QUE VENGA
  */}
       {!props.loading && !props.totalTodos && props.onEmptyTodos()}
 
-      {!!props.totalTodos &&
-        !props.searchedTodos.length &&
-        props.onEmptySearchResults(props.searchText)}
+{(!!props.totalTodos && !props.searchedTodos.length) && props.onEmptySearchResults(props.searchText)}
 
       {/* CON RENDER */}
       {/* {props.searchedTodos.map(props.render)} */}
@@ -30,7 +28,8 @@ NO TENEMOS SEARCHtODOS ENTONCES LO QUE QUIERO ES MOSTRAR TODO LO QUE VENGA
       {/* {props.searchedTodos.map(props.children)} */}
 
       {/* LLAMAR A RENDER O FUNCTIONS DEPENDE DEL QUE ESTEN ENVIANDO */}
-      {props.searchedTodos.map(renderFunc)}
+      {/* {props.searchedTodos.map(renderFunc)} */}
+      {(!props.loading && !props.error) && props.searchedTodos.map(renderFunc)}
 
     </section>
   )
