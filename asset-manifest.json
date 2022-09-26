@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/IntroductionReactjs/static/css/main.b714182d.css",
-    "main.js": "/IntroductionReactjs/static/js/main.bab69aea.js",
+    "main.css": "/IntroductionReactjs/static/css/main.8055ca24.css",
+    "main.js": "/IntroductionReactjs/static/js/main.3a235054.js",
     "index.html": "/IntroductionReactjs/index.html",
     "static/media/delete.svg": "/IntroductionReactjs/static/media/delete.331149da222541bc87c25bf8d775a070.svg",
+    "static/media/edit.svg": "/IntroductionReactjs/static/media/edit.2f94fa4986fa2032de8e0f7be45de5fa.svg",
     "static/media/check.svg": "/IntroductionReactjs/static/media/check.fa4fb594b16385306a04b9c87c0feb55.svg",
-    "main.b714182d.css.map": "/IntroductionReactjs/static/css/main.b714182d.css.map",
-    "main.bab69aea.js.map": "/IntroductionReactjs/static/js/main.bab69aea.js.map"
+    "main.8055ca24.css.map": "/IntroductionReactjs/static/css/main.8055ca24.css.map",
+    "main.3a235054.js.map": "/IntroductionReactjs/static/js/main.3a235054.js.map"
   },
   "entrypoints": [
-    "static/css/main.b714182d.css",
-    "static/js/main.bab69aea.js"
+    "static/css/main.8055ca24.css",
+    "static/js/main.3a235054.js"
   ]
 }
